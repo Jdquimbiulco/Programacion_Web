@@ -3,103 +3,251 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi pagina</title>
+    <title>Universidad de las Fuerzas Armadas ESPE</title>
     <link rel="stylesheet" href="./public/bootstrap-5.3.5-dist/css/bootstrap.min.css">
-</head>
+    <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="./imagenes/logo.png">
+
+    <style>
+    .fondo-imagen {
+      position: relative;
+      background-image: url('./imagenes/fondo.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      padding: 30px 0;
+    }
+
+    .fondo-imagen::before {
+      content: '';
+      position: absolute;
+      top: -20px;
+      left: 0;
+      width: 100%;
+      height: 20px;
+      background: linear-gradient(to bottom, white, rgba(255,255,255,0));
+      z-index: 1;
+    }
+
+    .fondo-imagen .row {
+      position: relative;
+      z-index: 2;
+    }
+
+    .fondo-imagen img {
+      width: 80px;
+      height: 80px;
+      object-fit: contain;
+      margin: 0 auto;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .fondo-imagen img:hover {
+      transform: scale(1.1);
+    }
+
+    .fondo-imagen figcaption {
+      text-align: center;
+      color: white;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    .fondo-imagen .col {
+      text-align: center;
+      padding: 15px;
+    }
+    
+  </style>
+
+
+
+  </head>
 <body> <!-- Mueve la etiqueta <body> aquí -->
 
 <header>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg bg-dark">
         <div class="container-fluid">
-          <a class="navbar-brand" href="index.html">ESPE</a>
+          <a class="navbar-brand pb-1" href="index.html" >
+            <figure>
+              <img src="/imagenes/logo100.png" class="img-fluid" width="370">
+            </figure>
+          </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+              <li class="nav-item px-2">
+                <a class="nav-link active" aria-current="page" href="index.html"> <h2 class="display-8 text-light">INICIO</h2>  </a>
               </li>
               
-              <li class="nav-item">
-                <a class="nav-link" href="#" onclick="cargarPaginas('/paginas/foracion.html')">Sobre nosotros</a>
+              <li class="nav-item px-2">
+                <a class="nav-link" href="#" onclick="cargarPaginas('/paginas/foracion.html')"> <h2 class="display-8 text-light">FORMACION</h2> </a>
               </li>
 
-              <li class="nav-item">
-                <a class="nav-link" href="#" onclick="cargarPaginas('/paginas/hobbies.html')" >Oferta Academica</a>
+              <li class="nav-item px-2">
+                <a class="nav-link" href="#" onclick="cargarPaginas('/paginas/hobbies.html')" > <h2 class="display-8 text-light">PROGRAMAS</h2> </a>
               </li>
 
-              <li class="nav-item">
-                <a class="nav-link" href="#" onclick="cargarPaginas('/paginas/musica.html')">Contactos</a>
+              <li class="nav-item px-2">
+                <a class="nav-link" href="#" onclick="cargarPaginas('/paginas/musica.html')"> <h2 class="display-8 text-light">CONTACTO</h2> </a>
               </li>
 
             </ul>
-            <form class="d-flex" role="search">
-              <button class="btn btn-outline-success px-5" type="submit">Iniciar sesion</button>
-            </form>
+           
+              <button class="btn " type="button">
+                <figure>
+                  <img src="/imagenes/log-in.png" class="img-fluid" width="60">
+                </figure>
+              </button>
+           
           </div>
         </div>
       </nav>
 </header>
 
 <main>
-    <div class="container-fluid">
+    
         <div class="row">
-            <div class="col-10" id="contenido">
-                <!-- Aquí se cargará el contenido dinámico -->
+          <div class="col-12" id="contenido">
+            <!-- Aquí se cargará el contenido dinámico -->
             </div>
-  <div class="col-2 text-center bg-light">
-                <h5 >Herrameintas</h5>
-            <div class="row col-lg-12">
-                <div class="col">
-                    <figure>
-                        <img src="./imagenes/education.png" alt="fondo berserk" class="img-fluid">
-                        <figcaption>MiEspe</figcaption>
-                    </figure>
-                </div>
-                
-                <div class="col">
-                    <figure>
-                        <img src="./imagenes/mortarboard.png" alt="fondo berserk" class="img-fluid">
-                        <figcaption>Alumni</figcaption>
-                    </figure>
-                </div>
-                <div class="col">
-                    <figure>
-                        <img src="./imagenes/benefit.png" alt="fondo berserk" class="img-fluid">
-                        <figcaption>Becas</figcaption>
-                    </figure>
-                </div>
-                <div class="col">
-                    <figure>
-                        <img src="./imagenes/calendar.png" alt="fondo berserk" class="img-fluid">
-                        <figcaption>Calendario Academico</figcaption>
-                    </figure>
-                </div>
-                <div class="col">
-                    <figure>
-                        <img src="./imagenes/planet.png" alt="fondo berserk" class="img-fluid">
-                        <figcaption>EspeWorld</figcaption>
-                    </figure>
-                </div>
-                <div class="col">
-                    <figure>
-                        <img src="./imagenes/dean.png" alt="fondo berserk" class="img-fluid">
-                        <figcaption>Profesores</figcaption>
-                    </figure>
-                </div>
-            </div>
+          </div>
+          </div>
+          </div>
+
+          
+
+
+  <div class="container-fluid fondo-imagen">
+    <div class="row">
+      <div class="row col-lg-12">
+        <div class="col">
+          <figure>
+            <img src="./imagenes/education.png" alt="MiEspe">
+            <figcaption>MiEspe</figcaption>
+          </figure>
         </div>
+
+        <div class="col">
+          <figure>
+            <img src="./imagenes/mortarboard.png" alt="Alumni">
+            <figcaption>Alumni</figcaption>
+          </figure>
+        </div>
+
+        <div class="col">
+          <figure>
+            <img src="./imagenes/benefit.png" alt="Becas">
+            <figcaption>Becas</figcaption>
+          </figure>
+        </div>
+
+        <div class="col">
+          <figure>
+            <img src="./imagenes/calendar.png" alt="Calendario Academico">
+            <figcaption>Calendario Académico</figcaption>
+          </figure>
+        </div>
+
+        <div class="col">
+          <figure>
+            <img src="./imagenes/planet.png" alt="EspeWorld">
+            <figcaption>EspeWorld</figcaption>
+          </figure>
+        </div>
+
+        <div class="col">
+          <figure>
+            <img src="./imagenes/dean.png" alt="Profesores">
+            <figcaption>Profesores</figcaption>
+          </figure>
+        </div>
+      </div>
     </div>
+  </div>
+
+</body>
+</html>
 
 </main>
 
 
-<footer>
-   <div class="container-fluid bg-success text-center" >
-     <p> PROGRAMACION WEB</p>
-   </div>
+<footer class="bg-dark text-light pt-5">
+  <div class="container">
+    <div class="row text-center text-md-start align-items-start">
+
+      <!-- info -->
+      <div class="col-md-4 mb-4">
+        <div class="d-flex flex-column align-items-center align-items-md-start">
+          <img src="./imagenes/logoEscudo.png" class="img-fluid mb-3" style="max-width: 300px;">
+          <h5 class="text-success mb-2 fw-bold">UNIVERSIDAD DE LAS FUERZAS ARMADAS ESPE</h5>
+          <p class="mb-1 fw-bold">Innovación para la excelencia</p>
+          <p class="mb-1">Av. Gral. Rumiñahui S/N, Sangolquí 171103</p>
+          <p class="mb-1 fw-bold">(593) 23989-400</p>
+          <a href="#" class="text-light text-decoration-underline fw-bold">Contáctanos</a>
+        </div>
+        <!-- Redes sociales -->
+<div class="col-md-4 mb-4">
+        <h5 class="text-success fw-bold">Síguenos</h5>
+        <div class="d-flex justify-content-center justify-content-md-start gap-3">
+          <a href="#">
+            <img src="./imagenes/facebook.png" alt="Facebook" width="32" height="32">
+          </a>
+          <a href="#">
+            <img src="./imagenes/verify.png" alt="Twitter" width="32" height="32">
+          </a>
+          <a href="#">
+            <img src="./imagenes/instagram.png" alt="Instagram" width="32" height="32">
+          </a>
+          <a href="#">
+            <img src="./imagenes/youtube.png" alt="YouTube" width="32" height="32">
+          </a>
+                    <a href="#">
+            <img src="./imagenes/linkedin.png" alt="linkedin" width="32" height="32">
+          </a>
+        </div>
+      </div>
+      </div>
+
+      <!-- Explorar -->
+      <div class="col-md-4 mb-4">
+        <h5 class="text-success mb-3">Explorar</h5>
+        <ul class="list-unstyled fw-bold">
+          <li><a href="#" class="text-light text-decoration-underline">Carreras</a></li>
+          <li><a href="#" class="text-light text-decoration-underline">Admisiones</a></li>
+          <li><a href="#" class="text-light text-decoration-underline">Vida universitaria</a></li>
+          <li><a href="#" class="text-light text-decoration-underline">Investigación</a></li>
+          <li><a href="#" class="text-light text-decoration-underline">Sobre la ESPE</a></li>
+        </ul>
+      </div>
+
+      <!-- Columna 3: Recursos -->
+      <div class="col-md-4 mb-4">
+        <h5 class="text-success mb-3 ">Recursos</h5>
+        <ul class="list-unstyled fw-bold">
+          <li><a href="#" class="text-light text-decoration-underline">Salud universitaria</a></li>
+          <li><a href="#" class="text-light text-decoration-underline">Biblioteca</a></li>
+          <li><a href="#" class="text-light text-decoration-underline">Seguridad en el campus</a></li>
+          <li><a href="#" class="text-light text-decoration-underline">Servicios estudiantiles</a></li>
+          <li><a href="#" class="text-light text-decoration-underline">Alertas y emergencias</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <hr class="border-secondary">
+
+    <div class="text-center pb-3">
+      <small>&copy; 2025 Universidad de las Fuerzas Armadas ESPE. Todos los derechos reservados.</small>
+    </div>
+  </div>
 </footer>
+
+
+
 
 <script src="./public/bootstrap-5.3.5-dist/js/bootstrap.min.js"></script>
 <script src="./public/cargar.js"></script>
