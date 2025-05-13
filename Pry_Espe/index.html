@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi pagina</title>
+    <link rel="stylesheet" href="./public/bootstrap-5.3.5-dist/css/bootstrap.min.css">
+</head>
+<body> <!-- Mueve la etiqueta <body> aquí -->
+
+<header>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html">ESPE</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+              </li>
+              
+              <li class="nav-item">
+                <a class="nav-link" href="#" onclick="cargarPaginas('/paginas/foracion.html')">Sobre nosotros</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#" onclick="cargarPaginas('/paginas/hobbies.html')" >Oferta Academica</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#" onclick="cargarPaginas('/paginas/musica.html')">Contactos</a>
+              </li>
+
+            </ul>
+            <form class="d-flex" role="search">
+              <button class="btn btn-outline-success px-5" type="submit">Iniciar sesion</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+</header>
+
+<main>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-10" id="contenido">
+                <!-- Aquí se cargará el contenido dinámico -->
+            </div>
+  <div class="col-2 text-center bg-light">
+                <h5 >Herrameintas</h5>
+            <div class="row col-lg-12">
+                <div class="col">
+                    <figure>
+                        <img src="./imagenes/education.png" alt="fondo berserk" class="img-fluid">
+                        <figcaption>MiEspe</figcaption>
+                    </figure>
+                </div>
+                
+                <div class="col">
+                    <figure>
+                        <img src="./imagenes/mortarboard.png" alt="fondo berserk" class="img-fluid">
+                        <figcaption>Alumni</figcaption>
+                    </figure>
+                </div>
+                <div class="col">
+                    <figure>
+                        <img src="./imagenes/benefit.png" alt="fondo berserk" class="img-fluid">
+                        <figcaption>Becas</figcaption>
+                    </figure>
+                </div>
+                <div class="col">
+                    <figure>
+                        <img src="./imagenes/calendar.png" alt="fondo berserk" class="img-fluid">
+                        <figcaption>Calendario Academico</figcaption>
+                    </figure>
+                </div>
+                <div class="col">
+                    <figure>
+                        <img src="./imagenes/planet.png" alt="fondo berserk" class="img-fluid">
+                        <figcaption>EspeWorld</figcaption>
+                    </figure>
+                </div>
+                <div class="col">
+                    <figure>
+                        <img src="./imagenes/dean.png" alt="fondo berserk" class="img-fluid">
+                        <figcaption>Profesores</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+
+<footer>
+   <div class="container-fluid bg-success text-center" >
+     <p> PROGRAMACION WEB</p>
+   </div>
+</footer>
+
+<script src="./public/bootstrap-5.3.5-dist/js/bootstrap.min.js"></script>
+<script src="./public/cargar.js"></script>
+</body> <!-- Cierra la etiqueta <body> aquí -->
+</html>
