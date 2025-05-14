@@ -1,4 +1,27 @@
-   <body> <!-- Main content -->
+    <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    .hero-section {
+      background-color: #343a40;
+      color: white;
+      padding: 60px 0;
+    }
+    .song-card {
+      margin-top: 20px;
+    }
+    .player-container {
+      margin-top: 30px;
+      text-align: center;
+    }
+    .footer {
+      background-color: #343a40;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+    }
+  </style>
+  <body> <!-- Main content -->
     <div class="col-md-10 p-4">
       <nav class="navbar navbar-expand-lg bg-white shadow-sm rounded p-3 mb-4">
         <div class="container-fluid">
@@ -8,7 +31,9 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav me-auto">
-              <li class="nav-item"><a class="nav-link" href="#">Add New</a></li>
+              <li class="nav-item"><!-- Botón que llevará a la sección de música -->
+<a href="#musica" class="btn btn-primary">Ir a Música</a>
+</li>
               <li class="nav-item"><a class="nav-link" href="#">Calendario</a></li>
               <li class="nav-item"><a class="nav-link" href="#">Sobre mí</a></li>
             </ul>
@@ -76,14 +101,78 @@
         </ul>
       </div>
 
-      <!-- Gráfico simulado -->
-      <div class="card shadow-sm">
-        <div class="card-header bg-secondary text-white">
-          Actividad Mensual
+<!-- Sección de música -->
+<div id="musica" class="container my-5">
+    <!-- Aquí va todo el contenido de la música -->
+
+    
+  <!-- Sección Hero -->
+  <div class="hero-section text-center">
+    <h1>Centro de Música</h1>
+    <p>Escucha tus canciones favoritas</p>
+  </div>
+
+  <!-- Galería de canciones -->
+  <div class="container my-5">
+    <div class="row">
+      <!-- Canción 1 -->
+      <div class="col-md-4">
+        <div class="card song-card">
+          <img src="SubImagenes/NoPole.jpg" class="card-img-top" alt="Imagen de Canción">
+          <div class="card-body">
+            <h5 class="card-title">NoPole</h5>
+            <p class="card-text">Artista: Don Toliver</p>
+            <audio controls>
+              <source src="musicas/Don Toliver - No Pole .mp3" type="audio/mp3">
+              Tu navegador no soporta el elemento de audio.
+            </audio>
+          </div>
         </div>
-        <div class="card-body">
-          <img src="https://dummyimage.com/800x200/ced4da/6c757d.png&text=Gráfico+Simulado" class="img-fluid" alt="Gráfico">
+      </div>
+      <!-- Canción 2 -->
+      <div class="col-md-4">
+        <div class="card song-card">
+          <img src="https://via.placeholder.com/500x300.png?text=Imagen+de+Canción" class="card-img-top" alt="Imagen de Canción">
+          <div class="card-body">
+            <h5 class="card-title">Canción 2</h5>
+            <p class="card-text">Artista: Artista 2</p>
+            <audio controls>
+              <source src="cancion2.mp3" type="audio/mp3">
+              Tu navegador no soporta el elemento de audio.
+            </audio>
+          </div>
         </div>
+      </div>
+      <!-- Canción 3 -->
+      <div class="col-md-4">
+        <div class="card song-card">
+          <img src="https://via.placeholder.com/500x300.png?text=Imagen+de+Canción" class="card-img-top" alt="Imagen de Canción">
+          <div class="card-body">
+            <h5 class="card-title">Canción 3</h5>
+            <p class="card-text">Artista: Artista 3</p>
+            <audio controls>
+              <source src="cancion3.mp3" type="audio/mp3">
+              Tu navegador no soporta el elemento de audio.
+            </audio>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Reproductor de música principal -->
+  <div class="player-container">
+    <h2>Reproductor Principal</h2>
+    <audio id="mainPlayer" controls>
+      <source src="reproductor.mp3" type="audio/mp3">
+      Tu navegador no soporta el elemento de audio.
+    </audio>
+  </div>
+</div>
+
+<figure>
+    <img src="SubImagenes/GraficaSimulada.jpg" class="img-fluid" alt="Grafica">
+</figure>
       </div>
 
     </div>
