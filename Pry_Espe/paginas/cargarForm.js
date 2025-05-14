@@ -1,7 +1,7 @@
 // filepath: c:\Users\frank\NRC-22394\Programacion_Web\Pry_Espe\paginas\cargarForm.js
 document.addEventListener("DOMContentLoaded", () => {
   // Carga el formulario de inicio de sesión al cargar la página
-  cargarFormulario("formLogin.html");
+    cargarFormulario("./paginas/formLogin.html");
 });
 
 function cargarFormulario(archivoFormulario) {
