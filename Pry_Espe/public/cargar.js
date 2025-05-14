@@ -7,5 +7,5 @@ function cargarPaginas(nombre_pagina) {
 
 // Configuración inicial para cargar una página por defecto
 window.onload = () => {
-    cargarPaginas("/paginas/carusel.html"); // Página inicial por defecto
+    cargarPaginas("carusel.html"); // Página inicial por defecto
 };
