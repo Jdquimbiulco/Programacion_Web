@@ -1,0 +1,86 @@
+
+ <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    .sidebar {
+      min-height: 100vh;
+      background-color: #343a40;
+      color: white;
+    }
+    .sidebar .nav-link {
+      color: white;
+    }
+    .sidebar .nav-link.active {
+      background-color: #495057;
+    }
+    .job-card {
+      transition: transform 0.2s;
+    }
+    .job-card:hover {
+      transform: scale(1.01);
+    }
+  </style>
+</head>
+<body>
+
+
+    <!-- Main content -->
+    <div class="col-md-10 p-4">
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2>Ofertas de Empleo</h2>
+        <button class="btn btn-primary">+ Publicar Empleo</button>
+      </div>
+
+      <!-- Filtros -->
+      <div class="row mb-4">
+        <div class="col-md-4">
+          <input type="text" class="form-control" placeholder="Buscar por título...">
+        </div>
+        <div class="col-md-4">
+          <select class="form-select">
+            <option selected>Filtrar por categoría</option>
+            <option value="1">Tecnología</option>
+            <option value="2">Marketing</option>
+            <option value="3">Diseño</option>
+          </select>
+        </div>
+        <div class="col-md-4">
+          <select class="form-select">
+            <option selected>Ordenar por</option>
+            <option value="fecha">Fecha</option>
+            <option value="empresa">Empresa</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Cards de empleos -->
+      <div class="row">
+        <div class="col-md-6 mb-4">
+          <div class="card job-card shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">Desarrollador Web</h5>
+              <h6 class="card-subtitle text-muted mb-2">Empresa ABC</h6>
+              <p class="card-text">Buscamos un desarrollador con experiencia en JavaScript, HTML y CSS. Trabajo híbrido.</p>
+              <span class="badge bg-success">Tecnología</span>
+              <span class="badge bg-secondary">Tiempo completo</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 mb-4">
+          <div class="card job-card shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">Diseñador UX/UI</h5>
+              <h6 class="card-subtitle text-muted mb-2">Estudio Creativo XYZ</h6>
+              <p class="card-text">Estamos en busca de un diseñador UX/UI con experiencia en Figma y prototipado.</p>
+              <span class="badge bg-warning text-dark">Diseño</span>
+              <span class="badge bg-secondary">Remoto</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Agrega más cards aquí -->
+      </div>
+    </div>
+</body>

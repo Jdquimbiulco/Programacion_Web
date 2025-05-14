@@ -1,0 +1,130 @@
+<style>
+    body {
+      background-color: #f8f9fa;
+    }
+    .sidebar {
+      min-height: 100vh;
+      background-color: #343a40;
+      color: white;
+    }
+    .sidebar .nav-link {
+      color: white;
+    }
+    .sidebar .nav-link.active {
+      background-color: #495057;
+    }
+    .resume-card {
+      transition: box-shadow 0.2s;
+    }
+    .resume-card:hover {
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    .file-icon {
+      font-size: 2rem;
+      margin-right: 10px;
+    }
+    .badge {
+      font-size: 0.75rem;
+    }
+  </style>
+<body>
+
+    <!-- Main Content -->
+    <div class="col-md-10 p-4">
+      <!-- Navbar superior -->
+      <nav class="navbar navbar-expand-lg bg-white shadow-sm rounded p-3 mb-4">
+        <div class="container-fluid">
+          <a class="navbar-brand fw-bold" href="#">Mi Dashboard</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="#">📥 Mis Aplicaciones</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">📊 Estadísticas</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Buscar resumen..." aria-label="Buscar">
+              <button class="btn btn-outline-success" type="submit">Buscar</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Encabezado y botón -->
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2>Mis Resúmenes</h2>
+        <button class="btn btn-success">+ Subir Resumen</button>
+      </div>
+
+      <!-- Filtros -->
+      <div class="row mb-4">
+        <div class="col-md-6">
+          <input type="text" class="form-control" placeholder="Buscar por nombre de archivo...">
+        </div>
+        <div class="col-md-3">
+          <select class="form-select">
+            <option selected>Formato</option>
+            <option value="pdf">PDF</option>
+            <option value="docx">Word</option>
+          </select>
+        </div>
+        <div class="col-md-3">
+          <select class="form-select">
+            <option selected>Ordenar por</option>
+            <option value="fecha">Fecha de subida</option>
+            <option value="nombre">Nombre</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Lista de resúmenes -->
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <div class="card resume-card p-3">
+            <div class="d-flex align-items-center">
+              <i class="far fa-file-pdf text-danger file-icon"></i>
+              <div>
+                <h5 class="card-title mb-1">CV_Pedro_2025.pdf</h5>
+                <p class="text-muted mb-1">Subido: 10/05/2025</p>
+                <span class="badge bg-primary">Marketing</span>
+              </div>
+            </div>
+            <div class="mt-3 d-flex justify-content-between">
+              <a href="#" class="btn btn-outline-primary btn-sm">Ver</a>
+              <a href="#" class="btn btn-outline-success btn-sm">Descargar</a>
+              <a href="#" class="btn btn-outline-danger btn-sm">Eliminar</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+          <div class="card resume-card p-3">
+            <div class="d-flex align-items-center">
+              <i class="far fa-file-word text-primary file-icon"></i>
+              <div>
+                <h5 class="card-title mb-1">HojaVida_Maldonado.docx</h5>
+                <p class="text-muted mb-1">Subido: 02/04/2025</p>
+                <span class="badge bg-secondary">Ingeniería</span>
+              </div>
+            </div>
+            <div class="mt-3 d-flex justify-content-between">
+              <a href="#" class="btn btn-outline-primary btn-sm">Ver</a>
+              <a href="#" class="btn btn-outline-success btn-sm">Descargar</a>
+              <a href="#" class="btn btn-outline-danger btn-sm">Eliminar</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Más tarjetas duplicables -->
+      </div>
+    </div>
+
+    
+
+
+</body>

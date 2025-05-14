@@ -1,0 +1,81 @@
+
+ <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    .sidebar {
+      min-height: 100vh;
+      background-color: #343a40;
+      color: white;
+    }
+    .sidebar .nav-link {
+      color: white;
+    }
+    .sidebar .nav-link.active {
+      background-color: #495057;
+    }
+    .calendar-table th, .calendar-table td {
+      vertical-align: middle;
+    }
+    .event-label {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+
+
+    <!-- Main Content -->
+    <div class="col-md-10 p-4">
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2>Calendario de Eventos</h2>
+        <button class="btn btn-primary">+ Añadir Evento</button>
+      </div>
+
+      <!-- Tabla de eventos -->
+      <div class="table-responsive bg-white rounded shadow-sm p-3">
+        <table class="table table-hover calendar-table">
+          <thead class="table-light">
+            <tr>
+              <th>Fecha</th>
+              <th>Hora</th>
+              <th>Evento</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>13/05/2025</td>
+              <td>10:00 AM</td>
+              <td><span class="event-label text-primary">Reunión con el equipo</span></td>
+              <td>
+                <button class="btn btn-sm btn-outline-info">Editar</button>
+                <button class="btn btn-sm btn-outline-danger">Eliminar</button>
+              </td>
+            </tr>
+            <tr>
+              <td>15/05/2025</td>
+              <td>03:00 PM</td>
+              <td><span class="event-label text-success">Entrevista de trabajo</span></td>
+              <td>
+                <button class="btn btn-sm btn-outline-info">Editar</button>
+                <button class="btn btn-sm btn-outline-danger">Eliminar</button>
+              </td>
+            </tr>
+            <tr>
+              <td>18/05/2025</td>
+              <td>09:00 AM</td>
+              <td><span class="event-label text-warning">Entrega de proyecto</span></td>
+              <td>
+                <button class="btn btn-sm btn-outline-info">Editar</button>
+                <button class="btn btn-sm btn-outline-danger">Eliminar</button>
+              </td>
+            </tr>
+            <!-- Más eventos -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+</body>
