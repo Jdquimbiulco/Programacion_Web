@@ -1,180 +1,164 @@
-    <style>
-    body {
-      background-color: #f8f9fa;
-    }
-    .hero-section {
-      background-color: #343a40;
-      color: white;
-      padding: 60px 0;
-    }
-    .song-card {
-      margin-top: 20px;
-    }
-    .player-container {
-      margin-top: 30px;
-      text-align: center;
-    }
-    .footer {
-      background-color: #343a40;
-      color: white;
-      padding: 20px 0;
-      text-align: center;
-    }
-  </style>
-  <body> <!-- Main content -->
-    <div class="col-md-10 p-4">
-      <nav class="navbar navbar-expand-lg bg-white shadow-sm rounded p-3 mb-4">
-        <div class="container-fluid">
-          <a class="navbar-brand fw-bold" href="#">Mi Dashboard</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav me-auto">
-              <li class="nav-item"><!-- Botón que llevará a la sección de música -->
-<a href="#musica" class="btn btn-primary">Ir a Música</a>
-</li>
-              <li class="nav-item"><a class="nav-link" href="#">Calendario</a></li>
-              <li class="nav-item"><a class="nav-link" href="#">Sobre mí</a></li>
-            </ul>
-            <form class="d-flex" role="search">
-              <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Buscar</button>
-            </form>
-          </div>
+<style>
+  body {
+    background-color: #f8f9fa;
+  }
+  .hero-section {
+    background-color: #343a40;
+    color: white;
+    padding: 60px 0;
+  }
+  .song-card {
+    margin-top: 20px;
+  }
+  .player-container {
+    margin-top: 30px;
+    text-align: center;
+  }
+  .footer {
+    background-color: #343a40;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+  }
+</style>
+<body>
+  <div class="col-md-10 p-4">
+    <nav class="navbar navbar-expand-lg bg-white shadow-sm rounded p-3 mb-4">
+      <div class="container-fluid">
+        <a class="navbar-brand fw-bold" href="#">Mi Espe</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a href="#clases" class="btn btn-primary">Mis Clases</a>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="#">Calendario</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Sobre mí</a></li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Buscar</button>
+          </form>
         </div>
-      </nav>
-
-      <!-- Información -->
-      <div class="container bg-white rounded shadow-sm p-4 mb-4">
-        <h1 class="mb-2">Customer Sales Representative</h1>
-        <h5 class="text-muted">San Francisco, CA</h5>
-        <p class="mt-3">Bienvenido al panel de control. Aquí puedes gestionar tus trabajos, ver tu calendario y editar tu perfil.</p>
       </div>
+    </nav>
 
-      <!-- Estadísticas -->
-      <div class="row mb-4">
-        <div class="col-md-4">
-          <div class="card card-stat shadow-sm">
-            <div class="card-body">
-              <h5 class="card-title">Solicitudes</h5>
-              <p class="display-6">45</p>
-              <div class="progress">
-                <div class="progress-bar bg-success" style="width: 75%"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card card-stat shadow-sm">
-            <div class="card-body">
-              <h5 class="card-title">Entrevistas</h5>
-              <p class="display-6">12</p>
-              <div class="progress">
-                <div class="progress-bar bg-info" style="width: 40%"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card card-stat shadow-sm">
-            <div class="card-body">
-              <h5 class="card-title">Ofertas</h5>
-              <p class="display-6">4</p>
-              <div class="progress">
-                <div class="progress-bar bg-warning" style="width: 20%"></div>
-              </div>
+    <!-- Información -->
+    <div class="container bg-white rounded shadow-sm p-4 mb-4">
+      <h1 class="mb-2">Panel del Estudiante</h1>
+      <h5 class="text-muted">Universidad de las Fuerzas Armadas ESPE</h5>
+      <p class="mt-3">Bienvenido, aquí podrás ver tus clases, tareas pendientes, tu calendario académico y más recursos estudiantiles.</p>
+    </div>
+
+    <!-- Estadísticas Académicas -->
+    <div class="row mb-4">
+      <div class="col-md-4">
+        <div class="card card-stat shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">Asignaturas Actuales</h5>
+            <p class="display-6">6</p>
+            <div class="progress">
+              <div class="progress-bar bg-success" style="width: 100%"></div>
             </div>
           </div>
         </div>
       </div>
-
-      <!-- Tareas -->
-      <div class="card shadow-sm mb-4">
-        <div class="card-header bg-primary text-white">
-          Tareas Pendientes
-        </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">Actualizar CV</li>
-          <li class="list-group-item">Enviar solicitud a Google</li>
-          <li class="list-group-item">Revisar correo de entrevistas</li>
-        </ul>
-      </div>
-
-<!-- Sección de música -->
-<div id="musica" class="container my-5">
-    <!-- Aquí va todo el contenido de la música -->
-
-    
-  <!-- Sección Hero -->
-  <div class="hero-section text-center">
-    <h1>Centro de Música</h1>
-    <p>Escucha tus canciones favoritas</p>
-  </div>
-
-  <!-- Galería de canciones -->
-  <div class="container my-5">
-    <div class="row">
-      <!-- Canción 1 -->
       <div class="col-md-4">
-        <div class="card song-card">
-          <img src="SubImagenes/NoPole.jpg" class="card-img-top" alt="Imagen de Canción">
+        <div class="card card-stat shadow-sm">
           <div class="card-body">
-            <h5 class="card-title">NoPole</h5>
-            <p class="card-text">Artista: Don Toliver</p>
-            <audio controls>
-              <source src="musicas/Don Toliver - No Pole .mp3" type="audio/mp3">
-              Tu navegador no soporta el elemento de audio.
-            </audio>
+            <h5 class="card-title">Trabajos Entregados</h5>
+            <p class="display-6">15</p>
+            <div class="progress">
+              <div class="progress-bar bg-info" style="width: 75%"></div>
+            </div>
           </div>
         </div>
       </div>
-      <!-- Canción 2 -->
       <div class="col-md-4">
-        <div class="card song-card">
-          <img src="https://via.placeholder.com/500x300.png?text=Imagen+de+Canción" class="card-img-top" alt="Imagen de Canción">
+        <div class="card card-stat shadow-sm">
           <div class="card-body">
-            <h5 class="card-title">Canción 2</h5>
-            <p class="card-text">Artista: Artista 2</p>
-            <audio controls>
-              <source src="cancion2.mp3" type="audio/mp3">
-              Tu navegador no soporta el elemento de audio.
-            </audio>
-          </div>
-        </div>
-      </div>
-      <!-- Canción 3 -->
-      <div class="col-md-4">
-        <div class="card song-card">
-          <img src="https://via.placeholder.com/500x300.png?text=Imagen+de+Canción" class="card-img-top" alt="Imagen de Canción">
-          <div class="card-body">
-            <h5 class="card-title">Canción 3</h5>
-            <p class="card-text">Artista: Artista 3</p>
-            <audio controls>
-              <source src="cancion3.mp3" type="audio/mp3">
-              Tu navegador no soporta el elemento de audio.
-            </audio>
+            <h5 class="card-title">Promedio General</h5>
+            <p class="display-6">87%</p>
+            <div class="progress">
+              <div class="progress-bar bg-warning" style="width: 87%"></div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- Reproductor de música principal -->
-  <div class="player-container">
-    <h2>Reproductor Principal</h2>
-    <audio id="mainPlayer" controls>
-      <source src="reproductor.mp3" type="audio/mp3">
-      Tu navegador no soporta el elemento de audio.
-    </audio>
-  </div>
-</div>
+    <!-- Tareas Académicas -->
+    <div class="card shadow-sm mb-4">
+      <div class="card-header bg-primary text-white">
+        Tareas Pendientes
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Entregar proyecto de programación (14 mayo)</li>
+        <li class="list-group-item">Estudiar para examen de cálculo (16 mayo)</li>
+        <li class="list-group-item">Actualizar portafolio en Moodle</li>
+      </ul>
+    </div>
 
-<figure>
-    <img src="SubImagenes/GraficaSimulada.jpg" class="img-fluid" alt="Grafica">
-</figure>
+    <!-- Sección de Clases (antigua sección de música) -->
+    <div id="clases" class="container my-5">
+      <!-- Hero -->
+      <div class="hero-section text-center">
+        <h1>Mis Clases</h1>
+        <p>Accede a tus recursos y grabaciones de clases</p>
       </div>
 
+      <!-- Galería de materias -->
+      <div class="container my-5">
+        <div class="row">
+          <!-- Clase 1 -->
+          <div class="col-md-4">
+            <div class="card song-card">
+              <img src="../imagenes/progra.png" class="card-img-top" alt="Clase de Programación">
+              <div class="card-body">
+                <h5 class="card-title">Estructura de Datos</h5>
+                <p class="card-text">Profesor: Ing. López</p>
+
+              </div>
+            </div>
+          </div>
+          <!-- Clase 2 -->
+          <div class="col-md-4">
+            <div class="card song-card">
+              <img src="../imagenes/integ.jpg" class="card-img-top" alt="Clase de Cálculo">
+              <div class="card-body">
+                <h5 class="card-title">Cálculo Integral</h5>
+                <p class="card-text">Profesor: Dra. Martínez</p>  
+              </div>
+            </div>
+          </div>
+          <!-- Clase 3 -->
+          <div class="col-md-4">
+            <div class="card song-card">
+              <img src="../imagenes/fisica.jpg" class="card-img-top" alt="Clase de Física">
+              <div class="card-body">
+                <h5 class="card-title">Física II</h5>
+                <p class="card-text">Profesor: Dr. Pérez</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Reproductor principal -->
+      <div class="player-container">
+        <h2>RADIO MI ESPE</h2>
+        <audio id="mainPlayer" controls>
+          <source src="../audio/joji.mpeg" type="audio/mpeg">
+          Tu navegador no soporta el elemento de audio.
+        </audio>
+      </div>
     </div>
-    </body>
-  
+
+    <!-- Imagen informativa (Gráfica o recurso) -->
+    <figure>
+      <img src="../imagenes/graph.png" class="img-fluid" alt="Gráfica de Progreso Académico">
+    </figure>
+  </div>
+</body>
