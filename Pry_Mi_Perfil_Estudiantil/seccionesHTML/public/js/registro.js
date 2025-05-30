@@ -76,6 +76,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const departamento = document.querySelector('input[name="departamento"]:checked');
 
+         const imagen = canvas.toDataURL("image/png");
+
         if (!nombre || !apellidos || !cedula || !email || !edad || !departamento) {
             alert("Por favor, completa todos los campos.");
             return;
@@ -87,7 +89,8 @@ document.addEventListener("DOMContentLoaded", function () {
             cedula,
             email,
             edad,
-            departamento: departamento.id
+            departamento: departamento.value,
+            imagen: imagen 
         };
 
         localStorage.setItem("datosUsuario", JSON.stringify(datos));

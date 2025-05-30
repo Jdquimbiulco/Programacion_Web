@@ -1,58 +1,129 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VerDatosUsuario</title>
-    <link rel="stylesheet" href="public/bootstrap-5.3.5-dist/css/bootstrap.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Perfil del Usuario</title>
+  <link rel="stylesheet" href="public/bootstrap-5.3.5-dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <!-- Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+  <style>
+    body {
+      background-image: url("public/imagenes/fondo3.jpeg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      min-height: 100vh;
+      color: white;
+      font-family: 'Arial', sans-serif;
+    }
+
+    .fondo-oscuro {
+      background-color: rgba(23, 26, 33, 0.9);
+      border-radius: 10px;
+      padding: 30px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    }
+
+    .card {
+      background-color: #2a2d35;
+      color: white;
+      border: 1px solid #66c0f4;
+    }
+
+    .card img {
+      object-fit: cover;
+      height: 100%;
+      max-height: 300px;
+    }
+
+    .card-title {
+      color: #66c0f4;
+    }
+
+    input {
+      background-color: #2a2d35;
+      color: white;
+      border: 1px solid #66c0f4;
+      border-radius: 5px;
+      padding: 5px;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    h1, h2 {
+      text-shadow: 1px 1px 2px black;
+    }
+  </style>
 </head>
 
-
-
 <body>
-    
+  <div class="container py-4 fondo-oscuro mt-4">
+    <h1 class="text-center mb-5 text-primary"><i class="fas fa-user-circle me-2"></i>Perfil del Usuario</h1>
 
-    <div class="container py-5">
-        <h1>Datos de Usuario</h1>
-        <hr>
-
-        <div class="card mb-3" style="max-width: 540px;">
-        <div class="row g-0">
-            <div class="col-md-4">
-            <img src="..." class="img-fluid rounded-start" alt="...">
-            </div>
-            <div class="col-md-8">
-            <div class="card-body">
-                <h5 class="card-title" id="col_nombre">Perfil de</h5>  
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
-            </div>
-            </div>
+    <!-- Tarjeta de Usuario -->
+    <div class="card mb-5 mx-auto" style="max-width: 800px;">
+      <div class="row g-0">
+        <div class="col-md-5">
+          <img id="foto_usuario" src="" class="img-fluid rounded-start" alt="Foto del usuario">
         </div>
+        <div class="col-md-7">
+          <div class="card-body">
+            <h4 class="card-title" id="nombre_apellido"></h4>
+            <p class="card-text fs-5">
+              <strong>Cédula:</strong> <span id="col_cedula"></span><br>
+              <strong>Email:</strong> <span id="col_email"></span><br>
+              <strong>Edad:</strong> <span id="col_edad"></span><br>
+              <strong>Departamento:</strong> <span id="col_departamento"></span>
+            </p>
+            <button class="btn btn-outline-danger btn-sm" onclick="eliminarDatos()">Eliminar</button>
+          </div>
         </div>
+      </div>
     </div>
 
+    <!-- Sección de Ubicación -->
+    <h2 class="text-primary mb-3"><i class="fas fa-map-marker-alt me-2"></i>Ubicación del Usuario</h2>
+    <div class="mb-3">
+      <label for="txt_latitud">Latitud:</label>
+      <input type="text" id="txt_latitud" class="w-100 mb-2">
+      <label for="txt_longitud">Longitud:</label>
+      <input type="text" id="txt_longitud" class="w-100">
     </div>
+    <div id="map" class="rounded border" style="height: 400px;"></div>
+  </div>
 
-    <script>
-         var datos_usuario =  localStorage.getItem("datosUsuario");
-         console.log(datos_usuario);
-         //para tener un objeto
-        var usuario  =  JSON.parse(datos_usuario);
-        var nombre_u = usuario.nombre_u;
-        var apellido_u = usuario.apellido_u;
-        var cedula_u = usuario.cedula_u;
+  <script>
+    const datosGuardados = localStorage.getItem("datosUsuario");
 
-        document.getElementById("nombre").innerHTML = nombre_u;
-        document.getElementById("col_apellido").innerHTML = apellido_u;
-        document.getElementById("col_cedula").innerHTML = cedula_u;
+    if (datosGuardados) {
+      const usuario = JSON.parse(datosGuardados);
 
+      document.getElementById("nombre_apellido").textContent = usuario.nombre + " " + usuario.apellidos;
+      document.getElementById("col_cedula").textContent = usuario.cedula;
+      document.getElementById("col_email").textContent = usuario.email;
+      document.getElementById("col_edad").textContent = usuario.edad;
+      document.getElementById("col_departamento").textContent = usuario.departamento;
+      document.getElementById("foto_usuario").src = usuario.imagen || "";
+    } else {
+      alert("No hay datos de usuario guardados.");
+    }
 
-        function eliminarDatos() {
-            localStorage.removeItem("datos_usuario");
-            location.reload();
-            alert("Datos de usuario eliminados correctamente");
-        }
-    </script>
+    function eliminarDatos() {
+      localStorage.removeItem("datosUsuario");
+      alert("Datos eliminados correctamente.");
+      location.reload();
+    }
+  </script>
+
+  <script src="public/js/geolocation.js"></script>
 </body>
 </html>
