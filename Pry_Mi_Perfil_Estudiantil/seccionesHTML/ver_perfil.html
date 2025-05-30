@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VerDatosUsuario</title>
+    <link rel="stylesheet" href="public/bootstrap-5.3.5-dist/css/bootstrap.min.css">
+</head>
+
+
+
+<body>
+    
+
+    <div class="container py-5">
+        <h1>Datos de Usuario</h1>
+        <hr>
+
+        <div class="card mb-3" style="max-width: 540px;">
+        <div class="row g-0">
+            <div class="col-md-4">
+            <img src="..." class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+            <div class="card-body">
+                <h5 class="card-title" id="col_nombre">Perfil de</h5>  
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    </div>
+
+    <script>
+         var datos_usuario =  localStorage.getItem("datosUsuario");
+         console.log(datos_usuario);
+         //para tener un objeto
+        var usuario  =  JSON.parse(datos_usuario);
+        var nombre_u = usuario.nombre_u;
+        var apellido_u = usuario.apellido_u;
+        var cedula_u = usuario.cedula_u;
+
+        document.getElementById("nombre").innerHTML = nombre_u;
+        document.getElementById("col_apellido").innerHTML = apellido_u;
+        document.getElementById("col_cedula").innerHTML = cedula_u;
+
+
+        function eliminarDatos() {
+            localStorage.removeItem("datos_usuario");
+            location.reload();
+            alert("Datos de usuario eliminados correctamente");
+        }
+    </script>
+</body>
+</html>
