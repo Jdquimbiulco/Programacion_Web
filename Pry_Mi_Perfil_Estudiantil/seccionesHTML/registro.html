@@ -54,11 +54,9 @@
         <div class="row justify-content-center">
             <div class="col-lg-10">
                 <div class="steam-container p-4 p-md-5">
-                    <!-- <a href="javascript:history.back()" style="position:absolute; top:10px; right:10px; font-size:24px; color:white; text-decoration:none; cursor:pointer;">&times;</a> -->
-<button id="btn_regresar" type="button" class="btn btn-close btn-close-white position-absolute top-0 end-0 m-3" aria-label="Cerrar" style="top:10px; right:10px; font-size:24px; cursor:pointer;"></button>
+                    <button id="btn_regresar" type="button" class="btn btn-close btn-close-white position-absolute top-0 end-0 m-3" aria-label="Cerrar" style="top:10px; right:10px; font-size:24px; cursor:pointer;"></button>
 
                     <div class="row">
-
                         <!-- Columna 1: Cámara -->
                         <div class="col-md-4 mb-4">
                             <h3 class="text-primary border-bottom border-primary pb-2">
@@ -89,7 +87,7 @@
                                     <label class="form-label">Nombre</label>
                                     <div class="input-group">
                                         <span class="input-group-text"><i class="fas fa-user"></i></span>
-                                        <input type="text" id="nombre" class="form-control" placeholder="Tu nombre">
+                                        <input type="text" id="nombre" class="form-control" placeholder="Tu nombre" required>
                                     </div>
                                 </div>
 
@@ -97,7 +95,7 @@
                                     <label class="form-label">Apellidos</label>
                                     <div class="input-group">
                                         <span class="input-group-text"><i class="fas fa-user-tag"></i></span>
-                                        <input type="text" id="apellidos" class="form-control" placeholder="Tus apellidos">
+                                        <input type="text" id="apellidos" class="form-control" placeholder="Tus apellidos" required>
                                     </div>
                                 </div>
 
@@ -105,7 +103,7 @@
                                     <label class="form-label">Cédula</label>
                                     <div class="input-group">
                                         <span class="input-group-text"><i class="fas fa-id-card"></i></span>
-                                        <input type="text" id="cedula" class="form-control" placeholder="Tu cédula">
+                                        <input type="text" id="cedula" class="form-control" placeholder="Tu cédula" required>
                                     </div>
                                 </div>
 
@@ -113,44 +111,17 @@
                                     <label class="form-label">Correo Electrónico</label>
                                     <div class="input-group">
                                         <span class="input-group-text"><i class="fas fa-envelope"></i></span>
-                                        <input type="email" id="email" class="form-control" placeholder="Tu email">
+                                        <input type="email" id="email" class="form-control" placeholder="Tu email" required>
                                     </div>
                                 </div>
-
-<div class="mb-3">
-    <label class="form-label">Contraseña</label>
-    <div class="input-group">
-        <span class="input-group-text"><i class="fas fa-lock"></i></span>
-        <input type="password" id="password" class="form-control" placeholder="Tu contraseña" />
-    </div>
-</div>
-
 
                                 <div class="mb-3">
                                     <label class="form-label">Edad</label>
                                     <div class="input-group">
                                         <span class="input-group-text"><i class="fas fa-birthday-cake"></i></span>
-                                        <input type="number" id="edad" class="form-control" placeholder="Tu edad">
+                                        <input type="number" id="edad" class="form-control" placeholder="Tu edad" required>
                                     </div>
                                 </div>
-
-
-
-                                <!-- <div class="mb-3">
-                                    <label class="form-label">Departamento</label>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="departamento" id="exactas">
-                                        <label class="form-check-label" for="exactas">Ciencias Exactas</label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="departamento" id="electronica">
-                                        <label class="form-check-label" for="electronica">Electrónica</label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="departamento" id="humanas">
-                                        <label class="form-check-label" for="humanas">Ciencias Humanas</label>
-                                    </div>
-                                </div> -->
 
                                 <button id="btn_guardar" type="button" class="btn btn-primary w-100 mt-3">
                                     <i class="fas fa-save me-2"></i>Guardar Datos
@@ -172,29 +143,28 @@
                             </div>
                             <div class="mb-3">
                                 <br>
-    <label class="form-label">Departamento</label>
-    <div class="form-check">
-        <input class="form-check-input" type="radio" name="departamento" id="exactas" />
-        <label class="form-check-label" for="exactas">Ciencias Exactas</label>
-    </div>
-    <div class="form-check">
-        <input class="form-check-input" type="radio" name="departamento" id="electronica" />
-        <label class="form-check-label" for="electronica">Electrónica</label>
-    </div>
-    <div class="form-check">
-        <input class="form-check-input" type="radio" name="departamento" id="humanas" />
-        <label class="form-check-label" for="humanas">Ciencias Humanas</label>
-    </div>
-    <div class="form-check">
-        <input class="form-check-input" type="radio" name="departamento" id="informatica" />
-        <label class="form-check-label" for="informatica">Informática</label>
-    </div>
-    <div class="form-check">
-        <input class="form-check-input" type="radio" name="departamento" id="administracion" />
-        <label class="form-check-label" for="administracion">Administración</label>
-    </div>
-</div>
-
+                                <label class="form-label">Departamento</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="departamento" id="exactas" required>
+                                    <label class="form-check-label" for="exactas">Ciencias Exactas</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="departamento" id="electronica">
+                                    <label class="form-check-label" for="electronica">Electrónica</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="departamento" id="humanas">
+                                    <label class="form-check-label" for="humanas">Ciencias Humanas</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="departamento" id="informatica">
+                                    <label class="form-check-label" for="informatica">Informática</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="departamento" id="administracion">
+                                    <label class="form-check-label" for="administracion">Administración</label>
+                                </div>
+                            </div>
                         </div>
 
                     </div>
@@ -212,10 +182,10 @@
     <script src="public/js/registro.js"></script>
     <!--Script para regresar a index-->
     <script>
-  document.getElementById('btn_regresar').addEventListener('click', () => {
-    window.location.href = '../index.html';
-  });
-</script>
+        document.getElementById('btn_regresar').addEventListener('click', () => {
+            window.location.href = '../index.html';
+        });
+    </script>
 
 </body>
 </html>
