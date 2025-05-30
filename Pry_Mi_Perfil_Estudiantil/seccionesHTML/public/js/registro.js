@@ -1,95 +1,96 @@
-document.addEventListener("DOMContentLoaded", () => {
-    // Elementos
+document.addEventListener("DOMContentLoaded", function () {
     const btnGuardar = document.getElementById("btn_guardar");
-    const nombre = document.getElementById("nombre");
-    const edad = document.getElementById("edad");
-    const departamentoRadios = document.querySelectorAll('input[name="departamento"]');
-    var btnUbicacion = document.getElementById("btn_ubicacion");
-    const ubicacionInfo = document.getElementById("ubicacionInfo");
+    const btnFoto = document.getElementById("btn_tomar_foto");
+    const btnDescargar = document.getElementById("btn_descargar");
+    const btnUbicacion = document.getElementById("btn_ubicacion");
+
     const video = document.getElementById("my_video");
     const canvas = document.getElementById("my_foto");
     const context = canvas.getContext("2d");
+    const infoUbicacion = document.getElementById("ubicacionInfo");
 
+    let mapa = null;
+    let marcador = null;
 
-
-    // Guardar datos en localStorage
-    btnGuardar.addEventListener("click", () => {
-        const nombreVal = nombre.value.trim();
-        const edadVal = edad.value.trim();
-        const departamentoSeleccionado = Array.from(departamentoRadios).find(r => r.checked);
-
-        if (!nombreVal || !edadVal || !departamentoSeleccionado) {
-            alert("Por favor, complete todos los campos antes de guardar.");
-            return;
-        }
-
-        const datosUsuario = {
-            nombre: nombreVal,
-            edad: edadVal,
-            departamento: departamentoSeleccionado.id,
-        };
-
-        localStorage.setItem("datosUsuario", JSON.stringify(datosUsuario));
-        alert("Datos guardados correctamente.");
-    });
-
-    // Iniciar cámara
+    // Activar cámara
     if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
         navigator.mediaDevices.getUserMedia({ video: true })
-            .then((stream) => {
+            .then(function (stream) {
                 video.srcObject = stream;
             })
-            .catch(() => {
-                alert("No se pudo acceder a la cámara.");
-            });
+            .catch(() => alert("No se pudo acceder a la cámara."));
     }
 
     // Tomar foto
-    document.getElementById("btn_tomar_foto").addEventListener("click", () => {
+    btnFoto.addEventListener("click", () => {
         context.drawImage(video, 0, 0, canvas.width, canvas.height);
     });
 
     // Descargar foto
-    document.getElementById("btn_descargar").addEventListener("click", () => {
-        const image = canvas.toDataURL("image/png");
-        const link = document.createElement("a");
-        link.href = image;
-        link.download = "foto.png";
-        link.click();
+    btnDescargar.addEventListener("click", () => {
+        const imagen = canvas.toDataURL("image/png");
+        const enlace = document.createElement("a");
+        enlace.href = imagen;
+        enlace.download = "foto.png";
+        enlace.click();
     });
 
-    // Mapa Leaflet
-    let mapa;
-    let marcador;
-
+    // Obtener ubicación
     btnUbicacion.addEventListener("click", () => {
         if (!navigator.geolocation) {
-            ubicacionInfo.textContent = "Geolocalización no soportada por tu navegador.";
+            infoUbicacion.textContent = "Geolocalización no soportada.";
             return;
         }
-        ubicacionInfo.textContent = "Obteniendo ubicación...";
 
-        navigator.geolocation.getCurrentPosition(
-            (pos) => {
-                const { latitude, longitude } = pos.coords;
-                ubicacionInfo.textContent = `Latitud: ${latitude.toFixed(5)}, Longitud: ${longitude.toFixed(5)}`;
+        infoUbicacion.textContent = "Obteniendo ubicación...";
 
-                if (!mapa) {
-                    mapa = L.map("mapa").setView([latitude, longitude], 13);
-                    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-                        maxZoom: 19,
-                        attribution: "© OpenStreetMap",
-                    }).addTo(mapa);
-                    marcador = L.marker([latitude, longitude]).addTo(mapa);
-                } else {
-                    mapa.setView([latitude, longitude], 13);
-                    marcador.setLatLng([latitude, longitude]);
-                }
+        navigator.geolocation.getCurrentPosition(pos => {
+            const lat = pos.coords.latitude;
+            const lon = pos.coords.longitude;
 
-            },
-            (error) => {
-                ubicacionInfo.textContent = `Error al obtener ubicación: ${error.message}`;
+            infoUbicacion.textContent = `Latitud: ${lat.toFixed(5)}, Longitud: ${lon.toFixed(5)}`;
+
+            if (!mapa) {
+                mapa = L.map("mapa").setView([lat, lon], 13);
+                L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+                    maxZoom: 19,
+                    attribution: "© OpenStreetMap"
+                }).addTo(mapa);
+                marcador = L.marker([lat, lon]).addTo(mapa);
+            } else {
+                mapa.setView([lat, lon], 13);
+                marcador.setLatLng([lat, lon]);
             }
-        );
+        }, err => {
+            infoUbicacion.textContent = "Error: " + err.message;
+        });
+    });
+
+    // Guardar datos
+    btnGuardar.addEventListener("click", () => {
+        const nombre = document.getElementById("nombre").value.trim();
+        const apellidos = document.getElementById("apellidos").value.trim();
+        const cedula = document.getElementById("cedula").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const edad = document.getElementById("edad").value.trim();
+
+        const departamento = document.querySelector('input[name="departamento"]:checked');
+
+        if (!nombre || !apellidos || !cedula || !email || !edad || !departamento) {
+            alert("Por favor, completa todos los campos.");
+            return;
+        }
+
+        const datos = {
+            nombre,
+            apellidos,
+            cedula,
+            email,
+            edad,
+            departamento: departamento.id
+        };
+
+        localStorage.setItem("datosUsuario", JSON.stringify(datos));
+        alert("Datos guardados correctamente.");
     });
 });

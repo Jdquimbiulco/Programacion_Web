@@ -1,170 +1,238 @@
-/* --------------------
-xFondo general: degradado oscuro elegante con destellos sutiles
-   -------------------- */
+:root {
+    --primary: #00adee;
+    --primary-dark: #0078b4;
+    --secondary: #171a21;
+    --dark: #1b2838;
+    --darker: #0e141b;
+    --light: #c6d4df;
+    --lighter: #e9f2f9;
+    --accent: #66c0f4;
+    --success: #5ba32b;
+    --danger: #d94151;
+    --warning: #e0a82a;
+}
+
 body {
-    margin: 0;
-    padding: 0;
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, var(--darker), var(--dark));
+    color: var(--light);
     min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: radial-gradient(circle at top left, #0d1117, #161b22 70%);
-    font-family: 'Poppins', sans-serif;
-    color: #e1e4e8;
-}
-
-/* --------------------
-Contenedor del login: vidrio esmerilado con borde brillante
-   -------------------- */
-.login-container {
-    background: rgba(30, 36, 46, 0.75);
-    border-radius: 18px;
-    padding: 3rem 3.5rem;
-    box-shadow:
-        0 8px 32px rgba(0, 0, 0, 0.7),
-        inset 0 0 15px rgba(255, 255, 255, 0.05);
-    border: 1.5px solid rgba(94, 109, 255, 0.7);
-    width: 100%;
-    max-width: 400px;
-    text-align: center;
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    transition: border-color 0.3s ease;
-}
-
-.login-container:hover {
-    border-color: #5e6dff;
-}
-
-/* --------------------
-Título: moderno, elegante, ligero y con sombra sutil azul
-   -------------------- */
-h2 {
-    font-weight: 700;
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-    color: #a1a9ff;
-    text-shadow: 0 0 6px #5e6dff88;
-}
-
-/* --------------------
-Etiquetas: pequeñas, uppercase y con espacio entre letras
-   -------------------- */
-label {
-    display: block;
-    font-size: 0.85rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    color: #8a94a6;
-    margin-bottom: 0.5rem;
-}
-
-/* --------------------
-Inputs: fondo oscuro con brillo suave al foco y esquinas redondeadas
-   -------------------- */
-input[type="text"],
-input[type="email"],
-input[type="password"],
-input[type="number"] {
-    width: 100%;
-    padding: 0.75rem 1rem;
-    margin-bottom: 1.5rem;
-    border-radius: 12px;
-    border: 1.5px solid transparent;
-    background-color: #1b2233;
-    color: #e1e4e8;
-    font-size: 1.1rem;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-    outline: none;
-}
-
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="password"]:focus,
-input[type="number"]:focus {
-    border-color: #5e6dff;
-    box-shadow: 0 0 8px #5e6dffaa;
-    background-color: #252e48;
-}
-
-/* --------------------
-Botón principal: degradado azul eléctrico con efecto glow y animación al hover
-   -------------------- */
-.btn-primary {
-    background: linear-gradient(135deg, #4a6fff, #2a3db7);
-    color: #e1e4e8;
-    font-weight: 700;
-    font-size: 1.1rem;
-    padding: 0.85rem 1.5rem;
-    border: none;
-    border-radius: 16px;
-    cursor: pointer;
-    width: 100%;
-    letter-spacing: 1.4px;
-    text-transform: uppercase;
-    box-shadow:
-        0 4px 15px #2a3db7cc;
-    transition: box-shadow 0.3s ease, background 0.3s ease;
-}
-
-.btn-primary:hover {
-    background: linear-gradient(135deg, #6b82ff, #3a51d9);
-    box-shadow:
-        0 6px 25px #3a51d9ee,
-        0 0 15px #5e6dffcc;
-}
-
-/* --------------------
-Mensajes de error o alerta: fondo rojo suave y texto claro
-   -------------------- */
-.alert {
-    margin-top: 1.5rem;
-    background-color: #b4464b;
-    color: #f8d7da;
-    padding: 0.75rem 1rem;
-    border-radius: 12px;
-    font-weight: 600;
-    box-shadow: 0 0 12px #b4464bcc;
-}
-
-/* --------------------
-Ajustes responsive para móviles
-   -------------------- */
-@media (max-width: 480px) {
-    .login-container {
-        padding: 2rem 2rem;
-        max-width: 90vw;
-    }
-}
-
-
-body {
-    background: url('https://wallpaperaccess.com/full/792.jpg') no-repeat center center fixed;
-    background-size: cover;
     margin: 0;
+    padding: 2rem;
+    position: relative;
+    overflow-x: hidden;
 }
 
-.overlay {
+body::before {
+    content: '';
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.65);
-    z-index: 0;
+    background: url('https://cdn.akamai.steamstatic.com/store/home/store_home_share.jpg') no-repeat center center;
+    background-size: cover;
+    opacity: 0.15;
+    z-index: -1;
 }
 
-.content {
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.content-box {
+    background: rgba(23, 26, 33, 0.95);
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5),
+                inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.content-box:hover {
+    box-shadow: 0 12px 40px rgba(0, 173, 238, 0.2),
+                inset 0 0 0 1px rgba(102, 192, 244, 0.3);
+}
+
+.section-title {
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 1.25rem;
     position: relative;
-    z-index: 1;
+    padding-bottom: 0.5rem;
 }
 
-.header-bar {
-    position: relative;
-    z-index: 2;
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--primary), transparent);
 }
 
-.text-white {
-    text-shadow: 1px 1px 3px #000;
+/* Video y foto styles */
+.media-container {
+    background: rgba(11, 14, 19, 0.7);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid rgba(102, 192, 244, 0.1);
+}
+
+.media-container video, 
+.media-container canvas {
+    width: 100%;
+    border-radius: 6px;
+    background: #000;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Form styles */
+.form-label {
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.form-control {
+    background: rgba(27, 40, 56, 0.7);
+    border: 1px solid rgba(102, 192, 244, 0.2);
+    color: var(--lighter);
+    border-radius: 6px;
+    padding: 0.75rem 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    background: rgba(27, 40, 56, 0.9);
+    border-color: var(--primary);
+    box-shadow: 0 0 0 0.25rem rgba(0, 173, 238, 0.25);
+    color: white;
+}
+
+.form-check-input {
+    background-color: rgba(27, 40, 56, 0.7);
+    border: 1px solid rgba(102, 192, 244, 0.2);
+}
+
+.form-check-input:checked {
+    background-color: var(--primary);
+    border-color: var(--primary);
+}
+
+.form-check-label {
+    color: var(--light);
+    font-size: 0.9rem;
+}
+
+/* Button styles */
+.btn {
+    border-radius: 6px;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    border: none;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: white;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 173, 238, 0.3);
+}
+
+.btn-outline-primary {
+    background: transparent;
+    border: 1px solid var(--primary);
+    color: var(--primary);
+}
+
+.btn-outline-primary:hover {
+    background: var(--primary);
+    color: white;
+}
+
+.btn-outline-success {
+    background: transparent;
+    border: 1px solid var(--success);
+    color: var(--success);
+}
+
+.btn-outline-success:hover {
+    background: var(--success);
+    color: white;
+}
+
+.btn-info {
+    background: linear-gradient(135deg, #17a2b8, #138496);
+    color: white;
+}
+
+.btn-info:hover {
+    background: linear-gradient(135deg, #138496, #17a2b8);
+    color: white;
+}
+
+/* Map styles */
+#mapa {
+    height: 250px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(102, 192, 244, 0.2);
+}
+
+#ubicacionInfo {
+    color: var(--accent);
+    font-size: 0.85rem;
+    background: rgba(11, 14, 19, 0.7);
+    padding: 0.75rem;
+    border-radius: 6px;
+    margin-top: 1rem;
+    border: 1px dashed rgba(102, 192, 244, 0.3);
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .col-md-6 {
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 1rem;
+    }
+    
+    .content-box {
+        padding: 1.5rem;
+    }
+}
+
+/* Animation */
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(102, 192, 244, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(102, 192, 244, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(102, 192, 244, 0); }
+}
+
+.pulse {
+    animation: pulse 2s infinite;
 }
